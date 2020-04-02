@@ -8,16 +8,18 @@ namespace drk {
     class PrimitiveObject {
     public:
         PrimitiveObject();
-        GLfloat* getVertices();
+        void init(std::vector<GLfloat> &vertices);
         void draw(Shader &shader);
 
     protected:
-        std::vector<GLfloat> vertices;
         GLuint VAO = 0, VBO = 0;
     };
 
     class PrimitiveTriangle : public PrimitiveObject {
     public:
         PrimitiveTriangle();
+
+    protected:
+
     };
 }
