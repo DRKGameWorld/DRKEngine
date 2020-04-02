@@ -1,6 +1,12 @@
 #include "render_loop.h"
+#include <DRKEngine/objects/primitives.h>
+
 
 void drk::RenderLoop::start() {
+    drk::PrimitiveTriangle triangle;
+    drk::Shader shader(
+            FilePath("shaders/test.vert"),
+            FilePath("shaders/test.frag"));
     while (!this->window.shouldClose()) {
         drk::Window::pollEvents();
 
@@ -10,6 +16,9 @@ void drk::RenderLoop::start() {
                 this->background_color_green,
                 this->background_color_blue,
                 this->background_color_alpha);
+
+        triangle.draw(shader);
+
 
         this->window.swap();
     }
