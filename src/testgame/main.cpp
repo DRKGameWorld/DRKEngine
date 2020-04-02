@@ -10,6 +10,7 @@ int main() {
     }
     std::cout << "Window initialized. Starting render loop..." << std::endl;
     drk::RenderLoop renderLoop(window);
+    renderLoop.setBackgroundColor(0.1, 0.1, 0.1);
     renderLoop.start();
 }
 
